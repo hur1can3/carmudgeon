@@ -1,0 +1,3 @@
+#predefined phrases loaded here for easy translation
+word_count,You have %i words.
+dialog_stylesheet,QWidget{font-size: 22px;}
