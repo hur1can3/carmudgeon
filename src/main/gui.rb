@@ -105,7 +105,7 @@ class Gui
       rescue
         puts $!
         puts $!.backtrace
-        File.open("/root/crashlogs.txt", 'a') do |f|
+        File.open("crashlogs.txt", 'a') do |f|
           f.puts "-"*50
           f.puts "Crash occurred at #{Time.now.to_s}"
           f.puts "Crash Report:"
@@ -115,7 +115,8 @@ class Gui
         end
         GeneralEvent.log("APP_CRASH", "#{$!}\n#{$!.backtrace}")
         GeneralEvent.save_queue
-        Kernel.exec("sleep 0.1;cd /root/allocation-logix/;rake run -t")
+        #relaunch here
+        #Kernel.exec("sleep 0.1;rake run -t")
       end
 
     end
